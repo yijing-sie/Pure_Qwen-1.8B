@@ -35,3 +35,11 @@ There are several reasons why I decided to dedicate many hours to studying the [
 
 4. (Optional) Study `quen_pure.py` to see how the model works
 
+<h3 align="center">
+    <p>Example Model Output</p>
+</h3>
+
+Note: The default configuration in Qwen 1.8B has `top_p` set to **0.8**, so your output may differ from mine
+
+
+
