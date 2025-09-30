@@ -23,7 +23,7 @@ There are several reasons why I decided to dedicate many hours to studying the [
     <p>How to run the model?</p>
 </h3>
 
-### This repo works with Python 3.8+, and PyTorch 2.0+.
+### This repo works with Python 3.8+ and PyTorch 2.0+
 
 1. Install all required modules listed in `requirements.txt`
 
