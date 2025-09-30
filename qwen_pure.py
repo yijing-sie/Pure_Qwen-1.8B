@@ -3,7 +3,9 @@ query="""蒙古国的首都是乌兰巴托（Ulaanbaatar）
 冰岛的首都是雷克雅未克（Reykjavik）
 埃塞俄比亚的首都是"""
 
-
+print('Input query=')
+print(query)
+print('-----------------------------------------------')
 #%%
 from datetime import datetime
 import json
@@ -78,7 +80,7 @@ eos_token_id = generation_config_table['eos_token_id'] #end of sentence
 ## Encode query
 print('-----------------------------------------------')
 t1 = datetime.now()
-print('[{}] Tokenizer start encoding query...'.format(t1.strftime('%H:%M:%S')))
+print('[{}] Tokenizer starts encoding query...'.format(t1.strftime('%H:%M:%S')))
 tokens = tokenizer.tokenize(query) #str -> list(Bytes)
 token_ids = tokenizer.convert_tokens_to_ids(tokens) #list(int); Converts a token byte to its token id using the vocab, special tokens included
 token_ids = torch.tensor([token_ids]) #torch.int64
@@ -111,20 +113,20 @@ while True:
     
 ## Decode output tokens
 t3 = datetime.now()
-print('\n[{}] Model done!'.format(t3.strftime('%H:%M:%S')))
+print('\n[{}] Model done generating!'.format(t3.strftime('%H:%M:%S')))
 output_tokenIds=input_ids[0]
 output = tokenizer._decode(output_tokenIds, skip_special_tokens=True)
 t4 = datetime.now()
-print('[{}] Tokenizer done decode!'.format(t4.strftime('%H:%M:%S')))
+print('[{}] Tokenizer done decoding!'.format(t4.strftime('%H:%M:%S')))
 #%%
 min_, sec_ = divmod((t3-t2).seconds, 60)
 print('-')
 print('Time spent for tokenizer to encode queries =  {} sec'.format((t2-t1).microseconds/1000000))
 print('Time spent for Qwen model to generate responses = {:2d} min {:2d} sec'.format(min_, sec_))
 print('Time spent for tokenizer to decode responses =  {} sec'.format((t4-t3).microseconds/1000000))
-print('===============<< MODEL OUTPUT (include query) >>==============')
+print('===============<< MODEL OUTPUT (include input query) >>==============')
 print(output)
 print('===============================================================')
-print('Total # tokens    = {:4d}'.format(len(output_tokenIds)))
-print('Total # characters= {:4d}'.format(len(output)))
-print('Tokens per second = {:.3f}'.format(len(output_tokenIds)/(t3-t2).seconds))
+N_output_tokens = len(output_tokenIds) - len(token_ids[0])
+print('Total # output tokens (exclude input query) = {:4d}'.format(N_output_tokens))
+print('Tokens per second = {:.3f}'.format(N_output_tokens/(t3-t2).seconds))
