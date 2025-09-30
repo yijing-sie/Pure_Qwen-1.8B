@@ -27,7 +27,9 @@ There are several reasons why I decided to dedicate many hours to studying the [
 
 1. Install all required modules listed in `requirements.txt`
 
-2. Change the working directory to where `quen_pure.py` is
+2. Download [model-00001-of-00002.safetensors](https://huggingface.co/Qwen/Qwen-1_8B/blob/main/model-00001-of-00002.safetensors) & [model-00002-of-00002.safetensors](https://huggingface.co/Qwen/Qwen-1_8B/blob/main/model-00002-of-00002.safetensors) from the Qwen 1.8B repository on Hugging Face, as these weight files are too large to upload to GitHub.
+
+3. Change the working directory to where `quen_pure.py` is
 
 3. Run qwen_pure.py (It already contains an example query, so it's safe to execute)
 
