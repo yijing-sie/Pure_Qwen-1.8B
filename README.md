@@ -42,7 +42,7 @@ There are several reasons why I decided to dedicate many hours to studying the [
 Note: The default configuration in Qwen 1.8B has `top_p` set to **0.8**, so your output may differ from mine
 
 <h3 align="center">
-    <img src="Example_Model_Output.png"/>
+    <img src="example_model_output.png"/>
 </h3>
 
 
