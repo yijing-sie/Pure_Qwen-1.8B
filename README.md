@@ -25,7 +25,7 @@ There are several reasons why I decided to dedicate many hours to studying the [
 
 ### This repo works with Python 3.8+ and PyTorch 2.0+
 
-1. Install all required modules listed in `requirements.txt`
+1. Install all required modules listed in `requirements.txt` (the installation command is provided at the top of the file)
 
 2. Download [model-00001-of-00002.safetensors](https://huggingface.co/Qwen/Qwen-1_8B/blob/main/model-00001-of-00002.safetensors) & [model-00002-of-00002.safetensors](https://huggingface.co/Qwen/Qwen-1_8B/blob/main/model-00002-of-00002.safetensors) from the Qwen 1.8B repository on Hugging Face, as these weight files are too large to upload to GitHub.
 
